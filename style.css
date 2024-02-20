@@ -79,7 +79,7 @@ ol {
 
 a {
     text-decoration: none;
-    color: #5BA689;
+    color: pink;
 }
 
 a:hover {}
@@ -314,7 +314,7 @@ a:hover {}
     overflow: hidden;
     height: 52px;
     /* margin-bottom: 2em; */
-    background: #B9DDD1;
+    background: #DBD6D1;
 }
 
 #menu {
@@ -346,14 +346,14 @@ a:hover {}
     font-family: 'Helvetica', sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color: black;
+    color: #3F3C3B;
 }
 
 #menu a:hover,
 #menu .current_page_item a {
-    background: rgb(134, 206, 177);
+    background: #3731203a;
     text-decoration: none;
-    color: black;
+    color: #3F3C3B;
 }
 
 #menu .current_page_item a {}
