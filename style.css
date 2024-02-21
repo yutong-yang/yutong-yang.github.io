@@ -184,6 +184,22 @@ a:hover {}
     margin: 1%;
 }
 
+.gallery_container_research {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 20;
+}
+
+.gallery_container_research img {
+    width: 27%;
+    height: auto;
+    padding: 0%;
+    /* background: #f2f2f2; */
+    background: white;
+    aspect-ratio: 16/9;
+    margin: 1%;
+}
+
 
 /* Header */
 
@@ -769,8 +785,8 @@ a:hover {}
 .subtitles {
     /* background-color: #B9DDD1; */
     /* border: 3px solid rgb(241, 230, 167); */
-    background: linear-gradient(rgb(255, 255, 255) 0 0) padding-box, /*this is your grey background*/
-    linear-gradient(to right, rgb(145, 177, 238), rgb(169, 223, 205)) border-box;
+    /* background: linear-gradient(rgb(255, 255, 255) 0 0) padding-box, 
+    linear-gradient(to right, rgb(145, 177, 238), rgb(169, 223, 205)) border-box; */
     border: 3px solid transparent;
     border-radius: 12px;
     padding: 5px;
@@ -778,7 +794,7 @@ a:hover {}
     padding-right: 10px;
     /* cursor: pointer; */
     /* width: 110px; */
-    color: black;
+    color: #3f3c3bcc;
     font-weight: 400;
     font-size: 18;
     /* margin: 0;
@@ -786,4 +802,5 @@ a:hover {}
     /* text-transform: uppercase; */
     font-family: 'Arial', 'myfont';
     font-weight: 600;
+    text-decoration: underline; /* 添加下划线 */
 }
