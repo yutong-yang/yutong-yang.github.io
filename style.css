@@ -77,12 +77,24 @@ ol {
     display: none;
 }
 
-a {
+
+a.linkStyle1 {
     text-decoration: underline;
     color: #666; 
     /* rgba(46, 124, 176, 0.548) */
     font-style: normal;
 }
+
+a.linkStyle2 {
+    text-decoration: underline;
+    /* color: rgb(238, 186, 225); */
+    /* color: pink; */
+    color: rgba(202, 39, 96, 0.821);
+    /* color: rgb(142, 195, 238); */
+    /* color: #3731206a; */
+    font-style: normal;
+}
+
 
 a:hover {}
 
