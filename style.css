@@ -840,3 +840,8 @@ a:hover {}
     font-family: 'Arial', 'myfont';
     /* text-decoration: underline; */
 }
+
+#div_mevis {
+    height: 80%;  /* 或者其他你想要的高度 */
+    overflow: hidden;
+}

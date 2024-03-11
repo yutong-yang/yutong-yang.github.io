@@ -9,6 +9,10 @@
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
     <script language="javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="jslib/d3tip.js"></script>
+    <script src="jslib/d3-contour.min.js"></script>
+    <script src="jslib/d3-scale-chromatic.v1.min.js"></script>
 </head>
 
 <body>
@@ -19,7 +23,8 @@
                     <li id="aboutme" class="current_page_item"><a href="#aboutme" onclick="tab_aboutme()">About Me</a></li>
                     <li id="publications" class=""><a href="#cv" onclick="tab_publications()">CV</a></li>
                     <!-- <li id="projects" class=""><a href="#projects" onclick="tab_projects()">Projects</a></li> -->
-                    <!-- <li id="misc" class=""><a href="#misc" onclick="tab_misc()">Misc</a></li> -->
+                    <!-- <li id="misc" class=""><a href="#misc" onclick="tab_misc()">misc</a></li> -->
+                    <li id="mevis" class=""><a href="#mevis" onclick="tab_mevis()">MeVis</a></li>
                     <li id="personal" class=""><a href="#personal" onclick="tab_personal()">Personal</a></li>
                 </ul>
             </div>
@@ -241,9 +246,9 @@
                         
                     </div>
             </div>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
             <div style="bottom: 0; text-align: right; font-size: 0.8em;">
                 <a href="https://olivialan.github.io/" class="linkStyle1">Credit: web source from Prof. Xingyu Lan</a>
             </div>
@@ -622,10 +627,23 @@
 
 
 
-        <!-- 文章 -->
-        <!-- <div id="div_misc" style="display: none; margin-top: 50px;" class="container">
-
+        <!-- MeVis -->
+        <!-- <div>
+            <input id="inputX" type="number" placeholder="输入x值">
+            <input id="inputY" type="number" placeholder="输入y值">
+            <select id="selectShape">
+                <option value="circle">圆形</option>
+                <option value="triangle">三角形</option>
+                <option value="rect">方块</option>
+            </select>
+            <input id="inputSize" type="number" placeholder="输入大小">
+            <button onclick="addShape()">添加图形</button>
         </div> -->
+        <div id="div_mevis" style="display: none; margin-top: 50px;" class="container">
+            (Under Construction 🏗️) Here, by reflecting on what situation I was in and the relevant choice I have made, 
+            I draw a life situation line which depicts my life points that inspired me or changed me.
+            If you are insterested in how your own life line has been led to present, you can write your own data in "medata" in the file me.js.
+        </div>
 
         <!-- 个人照片 -->
         <div id="div_personal" class="container" style="display: none; margin-top: 50px;">
@@ -692,7 +710,7 @@
         
         
     </div>
-
+    <script src="./js/me.js"></script>
 </body>
 
 <script>
@@ -712,53 +730,53 @@
     function tab_aboutme() {
         document.getElementById("aboutme").className = "current_page_item"
         document.getElementById("publications").className = ""
-        // document.getElementById("misc").className = ""
+        document.getElementById("mevis").className = ""
             // document.getElementById("projects").className = ""
         document.getElementById("personal").className = ""
         document.getElementById("div_aboutme").style.display = "block"
         document.getElementById("div_publications").style.display = "none"
             // document.getElementById("div_projects").style.display = "none"
-        // document.getElementById("div_misc").style.display = "none"
+        document.getElementById("div_mevis").style.display = "none"
         document.getElementById("div_personal").style.display = "none"
     }
 
     function tab_publications() {
         document.getElementById("aboutme").className = ""
         document.getElementById("publications").className = "current_page_item"
-        // document.getElementById("misc").className = ""
+        document.getElementById("mevis").className = ""
             // document.getElementById("projects").className = ""
         document.getElementById("personal").className = ""
         document.getElementById("div_aboutme").style.display = "none"
         document.getElementById("div_publications").style.display = "block"
             // document.getElementById("div_projects").style.display = "none"
-        // document.getElementById("div_misc").style.display = "none"
+        document.getElementById("div_mevis").style.display = "none"
         document.getElementById("div_personal").style.display = "none"
     }
 
 
-    function tab_misc() {
+    function tab_mevis() {
         document.getElementById("aboutme").className = ""
         document.getElementById("publications").className = ""
-        // document.getElementById("misc").className = "current_page_item"
+        document.getElementById("mevis").className = "current_page_item"
             // document.getElementById("projects").className = ""
         document.getElementById("personal").className = ""
         document.getElementById("div_aboutme").style.display = "none"
         document.getElementById("div_publications").style.display = "none"
             // document.getElementById("div_projects").style.display = "none"
-        // document.getElementById("div_misc").style.display = "block"
+        document.getElementById("div_mevis").style.display = "block"
         document.getElementById("div_personal").style.display = "none"
     }
 
     function tab_personal() {
         document.getElementById("aboutme").className = ""
         document.getElementById("publications").className = ""
-        // document.getElementById("misc").className = ""
+        document.getElementById("mevis").className = ""
             // document.getElementById("projects").className = ""
         document.getElementById("personal").className = "current_page_item"
         document.getElementById("div_aboutme").style.display = "none"
         document.getElementById("div_publications").style.display = "none"
             // document.getElementById("div_projects").style.display = "none"
-        // document.getElementById("div_misc").style.display = "none"
+        document.getElementById("div_mevis").style.display = "none"
         document.getElementById("div_personal").style.display = "block"
 
     }
