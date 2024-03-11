@@ -1,1 +1,1 @@
-https://yutong-yang.github.io/
+yutong-yang.github.io/
