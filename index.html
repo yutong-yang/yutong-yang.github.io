@@ -33,7 +33,7 @@
 
         <!-- 个人介绍页 -->
         <div id="div_aboutme" class="container" style="display:block">
-            <div class="photo_containter"><img src="images/yytphoto/me5.jpg" alt="" />
+            <div class="photo_containter"><img  id="myImage" src="images/yytphoto/me5.jpg" alt="" onclick="changeImage()"/>
                 <p>Yutong Yang 杨雨彤<br>Shanghai Jiao Tong University<br> flora20@sjtu.edu.cn
                 </p>
             </div>
@@ -445,7 +445,7 @@
                 <img src="images/yytphoto/shanghai4.jpeg" alt="" />
                 <!-- <img src="images/yytphoto/shanghai7.jpeg" alt="" /> -->
             </div>
-
+            <div class="subtitle_container"><span class="subtitles">Some interesting courses I have taken or audited</span> &nbsp;&nbsp;&nbsp; French Philosophy &nbsp;&nbsp;&nbsp; Information Design &nbsp;&nbsp;&nbsp; Phenomenology &nbsp;&nbsp;&nbsp; A Spiritual Odyssey of the West &nbsp;&nbsp;&nbsp; Interactive Design &nbsp;&nbsp;&nbsp; Epistemology</div>
             <div class="subtitle_container"><span class="subtitles">Student Work</span> I worked at the Art Center of the Student Union at Shanghai Jiao Tong University.</div>
             <div class="gallery_container">
                 <img src="images/yytphoto/AC1.JPG" alt="" />
@@ -516,6 +516,17 @@
         document.getElementById("div_personal").style.display = "block"
 
     }
+    var imageTracker = 'me5';
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (imageTracker == 'me5') {
+                image.src = 'images/yytphoto/me9.png';
+                imageTracker = 'me9';
+            } else {
+                image.src = 'images/yytphoto/me5.jpg';
+                imageTracker = 'me5';
+            }
+        }
 </script>
 <script src="./js/me.js"></script>
 </html>
