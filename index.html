@@ -20,13 +20,14 @@
         <div id="menu-wrapper">
             <div id="menu">
                 <ul>
-                    <li id="aboutme" class="current_page_item"><a href="#aboutme" onclick="tab_aboutme()">About Me</a></li>
+                    <li id="aboutme" class="current_page_item"><a href="#aboutme" onclick="tab_aboutme()">Me in Research</a></li>
                     <li id="publications" class=""><a href="#cv" onclick="tab_publications()">CV</a></li>
                     <!-- <li id="projects" class=""><a href="#projects" onclick="tab_projects()">Projects</a></li> -->
                     <!-- <li id="misc" class=""><a href="#misc" onclick="tab_misc()">misc</a></li> -->
                     <!-- !!!!! -->
                     <!-- <li id="mevis" class=""><a href="#mevis" onclick="tab_mevis()">MeVis</a></li> -->
-                    <li id="personal" class=""><a href="#personal" onclick="tab_personal()">Personal</a></li>
+                    <li id="personal" class=""><a href="#personal" onclick="tab_personal()">Me in School</a></li>
+                    <li id="school" class=""><a href="#school" onclick="tab_school()">Me in Life</a></li>
                 </ul>
             </div>
         </div>
@@ -425,12 +426,42 @@
 
 
 
-        <!-- 个人 -->
+        <!-- school -->
         <div id="div_personal" class="container" style="display: none; margin-top: 50px;">
             
-            <div class="subtitle_container"><span class="subtitles">Some words resonate with me</span> &nbsp;&nbsp;&nbsp; 🌈 Diversity &nbsp;&nbsp;&nbsp; 🦋 Inclusivity &nbsp;&nbsp;&nbsp; 🎨 Creativity &nbsp;&nbsp;&nbsp; 💞 Humanism &nbsp;&nbsp;&nbsp; 🐙 Phenomenology</div>
+             <div class="subtitle_container"><span class="subtitles">Some interesting courses I have taken or audited</span> 
+            &nbsp;&nbsp;&nbsp; French Philosophy &nbsp;&nbsp;&nbsp; Information Design &nbsp;&nbsp;&nbsp; Phenomenology &nbsp;&nbsp;&nbsp; A Spiritual Odyssey of the West &nbsp;&nbsp;&nbsp; Interactive Design &nbsp;&nbsp;&nbsp; Epistemology
+            </div>
+            <div class="subtitle_container"><span class="subtitles">Student Work</span> 
+            I worked at the Art Center of the Student Union at Shanghai Jiao Tong University. I mainly worked in photography, videography, and interviewing.
+            </div>
+            <div class="gallery_container">
+                <img src="images/yytphoto/AC1.JPG" alt="" />
+                <img src="images/yytphoto/AC3.jpg" alt="" />
+                <!-- <img src="images/yytphoto/AC8.JPG" alt="" /> -->
+                <img src="images/yytphoto/AC2.JPG" alt="" />
+                <!-- <img src="images/yytphoto/AC4.JPG" alt="" /> -->
+                <img src="images/yytphoto/AC7.jpg" alt="" />
+                <!-- <img src="images/yytphoto/ArtCenter.jpg" alt="" /> -->
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1t7411i7wD&autoplay=no" style="border: 0px solid #f2f2f2; " allowfullscreen></iframe>
+                <a href="https://www.bilibili.com/video/BV1t7411i7wD/?spm_id_from=333.999.0.0&vd_source=b92b262d8b3a96c50054cbd7822e5e7b" target="_blank" class="linkStyle1">A video link to an event I participated in :)</a> 
+                &nbsp;&nbsp;&nbsp; I was one of the mobile cameras which worked from a close-up stage perspective.
+            </div>
+
+            <!-- <hr style="margin-top: 1%; margin-bottom: 1%;"></hr> -->
+
+                        
+
+        </div>
+
+        <!-- me in life -->
+        <div id="div_school" class="container" style="display: none; margin-top: 50px;">
+            
+            <div class="subtitle_container"><span class="subtitles">Some words resonate with me</span> 
+                &nbsp;&nbsp;&nbsp; 🌈 Diversity &nbsp;&nbsp;&nbsp; 🦋 Inclusivity &nbsp;&nbsp;&nbsp; 🎨 Creativity &nbsp;&nbsp;&nbsp; 💞 Humanism &nbsp;&nbsp;&nbsp; 🐙 Phenomenology</div>
             <div class="subtitle_container"><span class="subtitles">Personal Interests</span> &nbsp;&nbsp;&nbsp; 🌍 travel &nbsp;&nbsp;&nbsp; 📷 photograph &nbsp;&nbsp;&nbsp; 📖 reading &nbsp;&nbsp;&nbsp; 💭 thinking &nbsp;&nbsp;&nbsp; 🎵 music</div>
-           
+
+
             <!-- <hr style="margin-top: 1%; margin-bottom: 1%;"></hr> -->
 
             <div class="subtitle_container"><span class="subtitles">My Footprints</span> </div>
@@ -470,24 +501,10 @@
                 <img src="images/yytphoto/shanghai4.jpeg" alt="" />
                 <!-- <img src="images/yytphoto/shanghai7.jpeg" alt="" /> -->
             </div>
-            <div class="subtitle_container"><span class="subtitles">Some interesting courses I have taken or audited</span> &nbsp;&nbsp;&nbsp; French Philosophy &nbsp;&nbsp;&nbsp; Information Design &nbsp;&nbsp;&nbsp; Phenomenology &nbsp;&nbsp;&nbsp; A Spiritual Odyssey of the West &nbsp;&nbsp;&nbsp; Interactive Design &nbsp;&nbsp;&nbsp; Epistemology</div>
-            <div class="subtitle_container"><span class="subtitles">Student Work</span> I worked at the Art Center of the Student Union at Shanghai Jiao Tong University.</div>
-            <div class="gallery_container">
-                <img src="images/yytphoto/AC1.JPG" alt="" />
-                <img src="images/yytphoto/AC3.jpg" alt="" />
-                <!-- <img src="images/yytphoto/AC8.JPG" alt="" /> -->
-                <img src="images/yytphoto/AC2.JPG" alt="" />
-                <!-- <img src="images/yytphoto/AC4.JPG" alt="" /> -->
-                <img src="images/yytphoto/AC7.jpg" alt="" />
-                <!-- <img src="images/yytphoto/ArtCenter.jpg" alt="" /> -->
-                <iframe src="https://player.bilibili.com/player.html?bvid=BV1t7411i7wD&autoplay=no" style="border: 0px solid #f2f2f2; " allowfullscreen></iframe>
-                <a href="https://www.bilibili.com/video/BV1t7411i7wD/?spm_id_from=333.999.0.0&vd_source=b92b262d8b3a96c50054cbd7822e5e7b" target="_blank" class="linkStyle1">A video link to an event I participated in :)</a> I was one of the mobile cameras which worked from a close-up stage perspective.
 
-            </div>
                         
 
         </div>
-
         
         
     </div>
@@ -513,10 +530,12 @@
         document.getElementById("publications").className = ""
         // document.getElementById("mevis").className = ""
         document.getElementById("personal").className = ""
+        document.getElementById("school").className = ""
         document.getElementById("div_aboutme").style.display = "block"
         document.getElementById("div_publications").style.display = "none"
         // document.getElementById("div_mevis").style.display = "none"
         document.getElementById("div_personal").style.display = "none"
+        document.getElementById("div_school").style.display = "none"
     }
 
     function tab_publications() {
@@ -524,10 +543,12 @@
         document.getElementById("publications").className = "current_page_item"
         // document.getElementById("mevis").className = ""
         document.getElementById("personal").className = ""
+        document.getElementById("school").className = ""
         document.getElementById("div_aboutme").style.display = "none"
         document.getElementById("div_publications").style.display = "block"
         // document.getElementById("div_mevis").style.display = "none"
         document.getElementById("div_personal").style.display = "none"
+        document.getElementById("div_school").style.display = "none"
     }
 
     function tab_personal() {
@@ -535,12 +556,29 @@
         document.getElementById("publications").className = ""
         // document.getElementById("mevis").className = ""
         document.getElementById("personal").className = "current_page_item"
+        document.getElementById("school").className = ""
         document.getElementById("div_aboutme").style.display = "none"
         document.getElementById("div_publications").style.display = "none"
         // document.getElementById("div_mevis").style.display = "none"
         document.getElementById("div_personal").style.display = "block"
+        document.getElementById("div_school").style.display = "none"
 
     }
+
+    function tab_school() {
+        document.getElementById("aboutme").className = ""
+        document.getElementById("publications").className = ""
+        // document.getElementById("mevis").className = ""
+        document.getElementById("personal").className = ""
+        document.getElementById("school").className = "current_page_item"
+        document.getElementById("div_aboutme").style.display = "none"
+        document.getElementById("div_publications").style.display = "none"
+        // document.getElementById("div_mevis").style.display = "none"
+        document.getElementById("div_personal").style.display = "none"
+        document.getElementById("div_school").style.display = "block"
+
+    }
+
     var imageTracker = 'me5';
         function changeImage() {
             var image = document.getElementById('myImage');
