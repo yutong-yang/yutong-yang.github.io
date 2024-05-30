@@ -13,8 +13,30 @@
     <script src="jslib/d3tip.js"></script>
     <script src="jslib/d3-contour.min.js"></script>
     <script src="jslib/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 </head>
+<style>
+    .node rect {
+        cursor: move;
+        fill-opacity: .9;
+        shape-rendering: crispEdges;
+    }
 
+    .node text {
+        pointer-events: none;
+        text-shadow: 0 1px 0 #fff;
+    }
+
+    .link {
+        fill: none;
+        stroke: #000;
+        stroke-opacity: .2;
+    }
+
+    .link:hover {
+        stroke-opacity: .5;
+    }
+</style>
 <body>
     <div id="wrapper">
         <div id="menu-wrapper">
@@ -26,8 +48,8 @@
                     <!-- <li id="misc" class=""><a href="#misc" onclick="tab_misc()">misc</a></li> -->
                     <!-- !!!!! -->
                     <!-- <li id="mevis" class=""><a href="#mevis" onclick="tab_mevis()">MeVis</a></li> -->
-                    <li id="personal" class=""><a href="#personal" onclick="tab_personal()">Me in School</a></li>
-                    <li id="school" class=""><a href="#school" onclick="tab_school()">Me in Life</a></li>
+                    <li id="school" class=""><a href="#school" onclick="tab_school()">Me in School</a></li>
+                    <li id="personal" class=""><a href="#personal" onclick="tab_personal()">Me in Life</a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +67,9 @@
                 <p> Hi! I am a second-year master student in the <a href="https://vis.sjtu.edu.cn/index.html" class="linkStyle2">Data Intelligence Visual Analytics Team</a> at Shanghai Jiao Tong University 
                     and also a visiting student in <a href="https://vis.pku.edu.cn/" class="linkStyle2">PKU Visualization and Visual Analytics Group</a> at Peking University, supervised by <a href="https://www.cs.sjtu.edu.cn/PeopleDetail.aspx?id=107" class="linkStyle2">Prof. Xiaoju Dong</a> and <a href="https://vis.pku.edu.cn/xiaoruyuan.html" class="linkStyle2">Prof. Xiaoru Yuan</a>.
                     
-                <p> My research interest lies in <strong>visualization and data analysis for humanities and social sciences</strong>. Currently, I'm focusing on analyzing how incomprehension arises in conversation. I’m passionate about using technology and creativity to delve into the humanities.
+                <p> My research interest lies in <strong>visualization and data analysis for humanities and social sciences</strong>. 
+                    <!-- Currently, I'm focusing on analyzing how incomprehension arises in conversation.  -->
+                    I’m passionate about using technology and creativity to delve into the humanities.
                     It’s a pursuit fueled by a deep sense of empathy and a commitment to fairness. 
                     For me, an ideal work, even if it's a small force, should be truly valuable in enhancing mutual understanding and inclusivity among different societal groups.
                     <!-- driving societal progress,  -->
@@ -165,6 +189,7 @@
                 <p>Other Projects</p>
                 <!-- <div class="expand" onclick=toggle()>Expand</div> -->
             </div>
+            
 
             <div class="news_containter">
                 <div class="box-style">
@@ -228,12 +253,80 @@
                         
                     </div>
             </div>
-    <br>
-    <br>
-    <br>
+            <br>
+            <br>
+            <br>
+
             <div style="bottom: 0; text-align: right; font-size: 0.8em;">
                 <a href="https://olivialan.github.io/" class="linkStyle1">Credit: web source from Prof. Xingyu Lan</a>
             </div>
+
+            <hr style="margin-top: 1%; margin-bottom: 1%;"></hr>
+            <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
+                <p>Some Words</p>
+                <div class="expand" onclick=toggle()>Expand</div>
+            </div>
+            <div class="news_containter">
+                <div class="box-style">
+                    <p style="font-size: 14px">More specifically, my interest lies at the intersection of two aspects: humanism and creativity. 
+                    Along with my accumulated skills in visualization and data analysis, as well as my strengths in empathy, problem sensitivity, 
+                    and critical thinking, they guide my path toward achieving my goals.
+                    </p>
+                
+                    <!-- <p style="font-size: 14px; text-align: center;">Humanism and Creativity</p> -->
+                    <p> - HUMANITY - </p>
+                <div class="expand-content">
+                    <p style="font-size: 14px">In the aspect of <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">humanism</a>, the original intention is to be understood, 
+                        and this kind of understanding extends to a wider range of the groups that I belong or empathize with. 
+                    I’m always looking for an expression that breaks down the barriers of difference and allows for empathy between different people. 
+                    For example, the group of people encompassing empathy, the idealists, the females, the minorities… 
+                    Because differences of background, situation, characteristic like gender, perception, etc. lead to different choices of being. 
+                    <!-- To understand, people need to see how these choices are made and perceive widely. -->
+                    I thus want to speak aloud to let more people know what different kinds of groups are perceiving and give us all understanding and support, 
+                    rather than criticize and marginalize the “abnormal” choices made. 
+                    <!-- To get a step further, I believe that every person experienced their own circumstances and thus led to their special personality and choices.  -->
+                    And understanding between the different us lies in a way, whether technical or humanistic, of true empathy. 
+
+                    <p style="font-size: 14px">Thus, any effort related to revealing social conditions, advocating for the rights of marginalized groups, 
+                        promoting equality and diversity, and fostering mutual understanding and inclusivity fills me with great meaning and enthusiasm.
+                    </p>
+
+                    <p style="font-size: 14px">In the aspect of <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">creativity</a>,
+                        the journey of exploring visualization itself is exciting. 
+                        I enjoy thinking out of the box and bringing the creativities into useful ideas. And I like using basic shapes to form novel designs.
+                        From another perspective, as Iris Murdoch said, <a style="font-style: italic"> art and morals are one, sharing the same essence: love—the perception of individuals. </a>
+                        It embraces the power of humanistic care and inherently aims to break down walls of incomprehension. 
+                        It transcends the self, representing the broadest realm of human insight. 
+                    <!-- Art and morals are… one. Their essence is the same. The essence of both of them is love. Love is the perception of individuals. Love is the extremely difficult realisation that something other than oneself is real. Love, and so art and morals, is the discovery of reality. -->
+                    </p>
+
+                    <!-- <p style="font-size: 14px; text-align: center;">An Interdisciplinary Path</p> -->
+                    <!-- Visualization and Social Computing -->
+                </div>
+                    <p> - TECHNOLOGY - </p>
+                <div class="expand-content">
+                    <p style="font-size: 14px">
+                        I’ve grappled with the tug-of-war between reality and ideals since childhood. 
+                        I chose to learn more about technology during my growth process, bridging the gap to reality and acquiring the ability to implement my ideas.
+                    </p>
+
+                    <p style="font-size: 14px">
+                        My research experience in the field of <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">visualization</a> 
+                        has empowered me with the ability to narrow down the boardly perceived problems and enhance my analytical skills. 
+                        At the same time, I’ve been actively enhancing my abilities in <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">social analysis</a> 
+                        as I persistently seek solutions for presenting and addressing the circumstances faced by minority and vulnerable groups, 
+                        while advocating for a more equitable and inclusive society.
+                    </p>
+                    <p> - INTERDISCIPLINARITY - </p>
+                    <p style="font-size: 14px">
+                        In light of all above, I find myself at the intersection of multiple disciplines.
+                    </p>
+                    <div id="sankey-chart" style="margin-bottom: 50;">
+                    </div>
+                </div>
+                </div>
+            </div>
+
 
         </div>
 
@@ -434,7 +527,7 @@
 
 
         <!-- school -->
-        <div id="div_personal" class="container" style="display: none; margin-top: 50px;">
+        <div id="div_school" class="container" style="display: none; margin-top: 50px;">
             
              <div class="subtitle_container"><span class="subtitles">Some interesting courses I have taken or audited</span> 
             &nbsp;&nbsp;&nbsp; French Philosophy &nbsp;&nbsp;&nbsp; Information Design &nbsp;&nbsp;&nbsp; Phenomenology &nbsp;&nbsp;&nbsp; A Spiritual Odyssey of the West &nbsp;&nbsp;&nbsp; Interactive Design &nbsp;&nbsp;&nbsp; Epistemology
@@ -457,15 +550,49 @@
 
             <!-- <hr style="margin-top: 1%; margin-bottom: 1%;"></hr> -->
 
-                        
+            <hr style="margin-top: 1%; margin-bottom: 1%;"></hr>
+            <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
+                <p>Some Words</p>
+                <!-- <div class="expand" onclick=toggle()>Expand</div> -->
+            </div>
+            <div class="news_containter">
+                <div class="box-style">
+                    <p style="font-weight: bold; ">Existentialism and Digital Humanities</p>
+                    <p style="font-size: 12;">
+                        Encountering existentialism is a turning point for me. 
+                        At that point I was lost but facing a forking path where I had to make a choice about my research direction. 
+                        I realized I needed to make choices within the limited freedom of my circumstances to correct my course. 
+                        With only a bit of courage, and a vague preference for humanities, 
+                        I suggested to my supervisor that I would like to try digital humanity. 
+                        That would be the start point my academic journey in the humanities, also my path of self discovery and expression.
+                    </p>
+                    <p style="font-weight: bold; ">Artificial Intelligence and Cognition</p>
+                    <p style="font-size: 12;">
+                        As doing the researches, I never stop thinking and try to find more academic intersections related to my major and my interests. 
+                        That’s partly the reason that I audited the philosophy courses. 
+                        I was excited to find every course inspiring and restructured my raw thinkings. 
+                        I particularly remember a lesson talked about the mind-brain identity theory. 
+                        I’ve already thought about whether there are cognition and emotion barriers between AI and human. 
+                        And I found in that lesson that the computationalism can potentially break the barriers between the two. 
+                        I haven’t thought through on that point but it interested my as always. 
+                        The meaning of life facing generative AI becomes vague.
+                    </p>
+                    <p style="font-weight: bold; ">Generative Art, Creativity and Expression</p>
+                    <p style="font-size: 12;">
+                        I've been exposed to more knowledge about generative art during the Interactive Design course. 
+                        I have long looked forward to exploring how AI can collaborate with human imagination and help us with self-expression, 
+                        for I believe the essence of art lies in its ability of expression, whose threshold is lowered by generative art.
+                    </p>
+                </div>
+            </div>
 
         </div>
 
         <!-- me in life -->
-        <div id="div_school" class="container" style="display: none; margin-top: 50px;">
+        <div id="div_personal" class="container" style="display: none; margin-top: 50px;">
             
             <div class="subtitle_container"><span class="subtitles">Some words resonate with me</span> 
-                &nbsp;&nbsp;&nbsp; 🌈 Diversity &nbsp;&nbsp;&nbsp; 🦋 Inclusivity &nbsp;&nbsp;&nbsp; 🎨 Creativity &nbsp;&nbsp;&nbsp; 💞 Humanism &nbsp;&nbsp;&nbsp; 🐙 Phenomenology</div>
+                &nbsp;&nbsp;&nbsp; 🌈 Diversity &nbsp;&nbsp;&nbsp; 🦋 Inclusivity &nbsp;&nbsp;&nbsp; 🎨 Creativity &nbsp;&nbsp;&nbsp; 💞 Humanism &nbsp;&nbsp;&nbsp; 🔦 Existentialism &nbsp;&nbsp;&nbsp; 🐙 Phenomenology</div>
             <div class="subtitle_container"><span class="subtitles">Personal Interests</span> &nbsp;&nbsp;&nbsp; 🌍 travel &nbsp;&nbsp;&nbsp; 📷 photograph &nbsp;&nbsp;&nbsp; 📖 reading &nbsp;&nbsp;&nbsp; 💭 thinking &nbsp;&nbsp;&nbsp; 🎵 music</div>
 
 
@@ -508,13 +635,7 @@
                 <img src="images/yytphoto/shanghai4.jpeg" alt="" />
                 <!-- <img src="images/yytphoto/shanghai7.jpeg" alt="" /> -->
             </div>
-
-                        
-
         </div>
-        
-        
-    </div>
 </body>
 
 <script>
@@ -599,4 +720,5 @@
         }
 </script>
 <script src="./js/me.js"></script>
+<script src="./js/researchkeywords.js"></script>
 </html>
