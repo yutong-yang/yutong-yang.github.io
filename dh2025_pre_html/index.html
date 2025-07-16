@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Leveraging Human Expertise for LLM-Assisted Dialogue Character Extraction and Attribution in Classic Chinese Novel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/theme/black.css" id="theme">
+  <style>
+    .two-column {
+      display: flex;
+      gap: 2rem;
+    }
+    .two-column > div {
+      flex: 1;
+    }
+    .image-placeholder {
+      background: #f0f0f0;
+      border: 2px dashed #ccc;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .small-text {
+      font-size: 0.8em;
+    }
+    .ssmall-text {
+      font-size: 0.5em;
+    }
+    .sssmall-text {
+      white-space: pre-line;
+      font-size: 0.5em;
+      text-align: left;
+    }
+    .slide-image {
+      max-width: 90%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 1rem auto;
+      display: block;
+    }
+    .title-image {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+      display: block;
+    }
+    .snap_containter img {
+      height: 360px;
+      width: auto;
+      margin-right: 1%;
+      vertical-align: middle;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Title Slide -->
+      <section>
+        <h1 style="font-size: 1em;">Leveraging Human Expertise for LLM-Assisted Dialogue Character Extraction and Attribution in Classic Chinese Novel</h1>
+        <h3 style="font-size: .5em;">Yutong Yang, Shanghai Jiao Tong University</h3>
+        <!-- 前端界面展示 -->
+        <img src="figure/frontend_all.png" alt="Frontend Interface" class="title-image">
+      </section>
+
+      <!-- 1. Introduction -->
+      <section>
+        <section>
+          <h2>1. Introduction</h2>
+          <div class="two-column">
+            <div>
+              <h4>Complex Narratives</h4>
+              <p class="small-text">Understanding character relationships in classic novels</p>
+            </div>
+            <div>
+              <h4>AI + Human Expertise</h4>
+              <p class="small-text">Combining capabilities for enhanced analysis</p>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h4>Challenges in Classic Chinese Novels</h4>
+          <div class="two-column">
+            <div style="flex: 2;">
+              <ul class="small-text">
+                <li>Complex character networks</li>
+                <li>Rich contextual references</li>
+                <li>Multiple aliases per character</li>
+              </ul>
+            </div>
+            <div style="flex: 1;">
+              <!-- 需要图片：红楼梦人物关系网络图 -->
+              <img src="figure/book.png" alt="红楼梦人物关系网络图" class="slide-image" style="max-width: 80%;">
+            </div>
+            
+          </div>
+          <img src="figure/daguanyuan.jpg" alt="红楼梦人物关系网络图" style="max-width: 30%;">
+          <img src="figure/daguanyuan2.jpg" alt="红楼梦人物关系网络图" style="max-width: 30%;">
+          <img src="figure/daguanyuan4.jpg" alt="红楼梦人物关系网络图"style="max-width: 30%;">
+        </section>
+      </section>
+
+      <!-- 2. Framework Overview -->
+      <section>
+        <section>
+          <h2>2. Framework Overview</h2>
+          <div class="two-column">
+            <div style="flex: 0.5;">
+              <div style="margin-bottom: 1rem;">
+                <h5>Back-end Processing</h5>
+                <ul class="ssmall-text">
+                  <li>Data extraction</li>
+                  <li>LLM processing</li>
+                  <li>Character identification</li>
+                </ul>
+              </div>
+              <div>
+                <h5>Front-end Interface</h5>
+                <ul class="ssmall-text">
+                  <li>Interactive annotation</li>
+                  <li>Visualization</li>
+                  <li>Manual refinement</li>
+                </ul>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <!-- 需要图片：整体框架架构图 -->
+              <img src="figure/pipeline.png" alt="整体框架架构图" class="slide-image">
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- 3. Back-end Data Processing -->
+      <section>
+        <section>
+          <h2>3. Back-end Data Processing</h2>
+        </section>
+        
+        <section>
+          <h3>3.1 Upload and Segmentation</h3>
+          <div class="two-column">
+            <div>
+              <h4>Text Upload</h4>
+              <p class="small-text">Original novel text upload</p>
+            </div>
+            <div>
+              <h4>Rule-based Segmentation</h4>
+              <p class="small-text">Break into dialogue units with context</p>
+            </div>
+          </div>
+          <div class="snap_containter">
+            <img src="figure/backend_uoload.png" alt="文本分割">
+            <img src="figure/backend_cut.png" alt="文本分割">
+          </div>
+        </section>
+
+        <section>
+          <h3>3.2 LLM-Based Extraction</h3>
+          <div class="two-column">
+            <div>
+              <!-- <h4>Speaker/Listener Extraction</h4> -->
+              <p class="small-text">Speaker and Listener Extraction</p>
+              <p class="sssmall-text">prompt = f"\nQ: I will give you a dialogue sentence and a passage of context. Please repeat the dialogue sentence, then based on the context, identify the speaker, the primary listener(s), and the secondary listener(s) in the specified dialogue sentence.  
+                Dialogue sentence: {talk}.  
+                Context: {context}.  
+                Please provide your answer in the format:  
+                'Dialogue sentence: [dialogue], Speaker: [speaker], Primary Listener(s): [primary listener(s)], Secondary Listener(s): [secondary listener(s)]'.  
+                Note:  
+                1. Use commas (",") to separate the dialogue sentence, speaker, primary listener(s), and secondary listener(s);  
+                2. If there are multiple speakers or multiple primary/secondary listeners, separate them using "、";  
+                3. Do not insert any line breaks in your answer;  
+                4. Resolve pronoun references carefully and avoid vague references like "you", "I", "he", etc.;  
+                5. Do not include any explanation or analysis in your answer — treat it like a fill-in-the-blank question. The more concise, the better;  
+                6. If the speaker, primary listener(s), or secondary listener(s) cannot be identified, respond with 'None'.  \nA:"
+              </p>
+              <p class="small-text">⇢ Add to Database</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>3.3 LLM-Assisted Attribution</h3>
+          <div class="two-column">
+            <div style="flex: 2;">
+              <!-- <h4>Name Chain Database</h4> -->
+              <p class="small-text">Resolve Co-references</p>
+              <p class="sssmall-text">prompt = 
+                f"\nQ:This is a fill-in-the-blank question with an answer of 0 or 1. Please determine: In the book '{chinese_book_name}', are '{entity}' and '{main_entity}' the same character? 
+                If yes, return 1; if not, return 0. Do not consider literary implications. No explanation or analysis is needed."
+                \nA:"
+              </p>
+              <p class="small-text">⇢ Add to Database</p>
+              <!-- <img src="figure/backend_entitychain.png" alt="人称链" style="height: 25%;"> -->
+            </div>
+            <!-- <div style="flex: 1;">
+              <h4>Dialogue Network</h4>
+              <p class="small-text">Visualize interactions</p>
+            </div> -->
+          </div>
+          <!-- <div class="image-placeholder">
+            [需要图片：对话网络生成图]
+          </div> -->
+        </section>
+      </section>
+
+      <!-- 4. Front-end Annotation Interface -->
+      <section>
+        <section>
+          <h2>4. Front-end Annotation Interface</h2>
+          <img src="figure/frontend_all.png" alt="Frontend Interface" >
+        </section>
+        
+        <section>
+          <h3>4.1 Worktable</h3>
+          <div class="two-column">
+            <div style="flex: 0.5;">
+              <div style="margin-bottom: 1rem;">
+                <p class="small-text">Upload & Cut Dialogues</p>
+              </div>
+            </div>
+            <!-- 前端界面截图 -->
+            <div style="flex: 1;">
+              <img src="figure/frontend_upload.jpg" alt="Frontend Interface" class="slide-image">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>4.2 Interactive Annotation</h3>
+          <div class="two-column">
+            <div style="flex: 0.5;">
+              <div>
+                <p class="small-text">Refine annotations: click to switch roles</p>
+              </div>
+            </div>
+            <!-- 前端界面截图 -->
+            <!-- <div style="flex: 1;">
+              <img src="figure/frontend_annotation.png" alt="Frontend Interface" class="slide-image">
+            </div> -->
+            <div style="flex: 1;">
+              <video src="figure/annotation.mp4" controls autoplay muted loop playsinline class="slide-image">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section>
+          <video
+            src="figure/annotation.mp4"
+            controls
+            autoplay
+            loop
+            muted
+            playsinline
+            style="max-width: 100%; height: auto; ">
+          </video>
+        </section> -->
+
+        <section>
+          <h3>4.3 Visualization Features</h3>
+          <div class="two-column">
+            <div style="flex: 0.5;">
+              <h5>Data visualization design</h5>
+              <ul class="ssmall-text">
+                <li>Large nodes = main name</li>
+                <li>Small nodes = Name aliases</li>
+                <li>Links between large nodes = relations (measured with numbers of conversation)</li>
+              </ul>
+            </div>
+            <div style="flex: 1;">
+              <video src="figure/network.mp4" controls autoplay muted loop playsinline class="slide-image">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>4.3 Visualization Features</h3>
+          <div class="two-column">
+            <div style="flex: 0.5;">
+              <h5>Manual Disambiguation</h5>
+              <p class="ssmall-text">Correct extraction errors</p>
+            </div>
+            <div style="flex: 1;">
+              <video src="figure/disambiguation.mp4" controls autoplay muted loop playsinline class="slide-image">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- 5. Case Studies -->
+      <section>
+        <section>
+          <h2>5. Simple Insights from the Data Visualization</h2>
+        </section>
+        
+        <!-- <section>
+          <h3>5.1 Dream of the Red Chamber</h3>
+          <div class="two-column">
+            <div>
+              <h4>Initial Extraction</h4>
+              <p class="small-text">LLM-based character identification</p>
+            </div>
+            <div>
+              <h4>Manual Refinement</h4>
+              <p class="small-text">Human expertise correction</p>
+            </div>
+          </div>
+            <img src="figure/frontend_annotation.png" alt="case" style="width: 70%;">
+        </section> -->
+
+        <section>
+          <!-- <h3>Data Visualization</h3> -->
+          <div class="two-column">
+            <div>
+              <h4>Key Characters</h4>
+              <p class="small-text">Important intermediary characters identified</p>
+            </div>
+            <div>
+              <h4>Interaction Patterns</h4>
+              <p class="small-text">Social dynamics revealed</p>
+            </div>
+          </div>
+          <img src="figure/chapters.png" alt="case" style="width: 70%;">
+          
+        </section>
+        <section>
+          <h4>Network of the first chapter</h4>
+          <img src="figure/first_chapter_net.png" alt="case" style="width: 100%;">
+        </section>
+        <section>
+          <h4>Network of the second chapter</h4>
+          <img src="figure/second_chapter_net.png" alt="case" style="width: 100%;">
+        </section>
+        <section>
+          <h4>Network of the third chapter</h4>
+          <img src="figure/third_chapter_net.png" alt="case" style="width: 100%;">
+        </section>
+        <section>
+          <h4>Network of the forth chapter</h4>
+          <img src="figure/forth_chapter_net.png" alt="case" style="width: 100%;">
+        </section>
+      </section>
+
+      <!-- 6. Conclusion -->
+      <section>
+        <section>
+          <h2>6. Conclusion</h2>
+        </section>
+        
+        <section>
+          <h3>6.1 Summary</h3>
+          <div class="two-column">
+            <div>
+              <p class="small-text">AI + Human</p>
+            </div>
+            <img src="figure/pipeline.png" alt="case" style="width: 70%;">
+          </div>
+        </section>
+
+        <section>
+          <h3>6.2 TODOs</h3>
+          <div class="two-column">
+            <div>
+              <h4>Improving Algorithm Efficiency</h4>
+              <p class="small-text">Improve the speed of data processing, thus generate the result faster.</p>
+            </div>
+            <div>
+              <h4>Incorporating SNA Algorithm</h4>
+              <p class="small-text">Use social network analysis algorithm to build a final network, which can directly serve for the literary analysis.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Thank You -->
+      <section>
+        <h2>Thank You!</h2>
+        <p class="small-text" style="font-style: italic;">flora20@sjtu.edu.cn</p>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.4/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide'
+    });
+  </script>
+</body>
+</html>
