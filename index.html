@@ -56,6 +56,14 @@
 
         <!-- 个人介绍页 -->
         <div id="div_aboutme" class="container" style="display:block">
+            <nav id="page-nav" class="page-nav">
+                <a href="#intro">Intro</a>
+                <a href="#works">Research</a>
+                <a href="#internship">Internship</a>
+                <a href="#projects">Projects</a>
+                <a href="#words">Words</a>
+            </nav>
+            <div id="intro" class="section-anchor"></div>
             <div class="photo_containter"><img  id="myImage" src="images/yytphoto/me5.jpg" alt="" onclick="changeImage()"/>
                 <p>Yutong Yang 杨雨彤<br>Shanghai Jiao Tong University<br> flora20@sjtu.edu.cn
                 </p>
@@ -103,8 +111,8 @@
         
                 <!-- 🪄 🦋🌸🔹🔸🧚‍♂️🧚🌱🍀🌈 -->
              </div>
-            <hr style="margin-top: 1%; margin-bottom: 1%;"></hr>
-            
+            <div class="section-divider"></div>
+            <div id="works" class="section-anchor"></div>
             <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
                 <p>Research</p>
             </div>
@@ -268,7 +276,8 @@
 
             </div>
 
-            <hr style="margin-top: 1%; margin-bottom: 1%;"></hr>
+            <div class="section-divider"></div>
+            <div id="internship" class="section-anchor"></div>
             <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
                 <p>Internship @ OECD/SWAC</p>
             </div>
@@ -308,7 +317,8 @@
                 </div>
             </div>
 
-            <hr style="margin-top: 1%; margin-bottom: 1%;"></hr>
+            <div class="section-divider"></div>
+            <div id="projects" class="section-anchor"></div>
             <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
                 <p>Other Projects</p>
                 <!-- <div class="expand" onclick=toggle()>Expand</div> -->
@@ -384,7 +394,8 @@
                 <a href="https://olivialan.github.io/" class="linkStyle1">Credit: web source from Prof. Xingyu Lan</a>
             </div>
 
-            <hr style="margin-top: 1%; margin-bottom: 1%;"></hr>
+            <div class="section-divider"></div>
+            <div id="words" class="section-anchor"></div>
             <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
                 <p>Some Words</p>
                 <div class="expand" onclick=toggle()>Expand</div>
@@ -935,6 +946,33 @@
                 lightbox.classList.remove("visible");
             }
         });
+
+        // 导航高亮功能
+        var navLinks = document.querySelectorAll(".page-nav a");
+        var sections = ["intro", "works", "internship", "projects", "words"];
+
+        function updateActiveNav() {
+            var scrollPos = window.scrollY + 100;
+            sections.forEach(function (sectionId, index) {
+                var section = document.getElementById(sectionId);
+                if (section) {
+                    var sectionTop = section.offsetTop;
+                    var sectionBottom = sectionTop + section.offsetHeight;
+                    var nextSection = index < sections.length - 1 ? document.getElementById(sections[index + 1]) : null;
+                    var nextSectionTop = nextSection ? nextSection.offsetTop : Infinity;
+
+                    if (scrollPos >= sectionTop && scrollPos < nextSectionTop) {
+                        navLinks.forEach(function (link) {
+                            link.classList.remove("active");
+                        });
+                        navLinks[index].classList.add("active");
+                    }
+                }
+            });
+        }
+
+        window.addEventListener("scroll", updateActiveNav);
+        updateActiveNav();
     });
 </script>
 <script src="./js/me.js"></script>
