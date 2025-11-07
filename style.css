@@ -198,6 +198,7 @@ a:hover {}
     background: #f2f2f2;
     aspect-ratio: 400/269;
     margin: 1%;
+    object-fit: cover;
 }
 .gallery_container iframe {
     width: 27%;
@@ -222,6 +223,88 @@ a:hover {}
     background: white;
     aspect-ratio: 16/9;
     margin: 1%;
+}
+
+.internship_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+.internship_item {
+    width: 31%;
+    box-sizing: border-box;
+    margin-bottom: 18px;
+}
+
+.internship_item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.internship_caption {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.internship_link {
+    text-decoration: none;
+    font-weight: normal;
+    color: #313131;
+}
+
+.internship_link:hover {
+    text-decoration: none;
+    color: rgba(202, 39, 96, 0.8);
+}
+
+.internship_zoom,
+.zoomable-image {
+    cursor: zoom-in;
+    transition: opacity 0.2s ease;
+}
+
+.zoomable-image:hover {
+    opacity: 0.85;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.lightbox.visible {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 4px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: rgba(202, 39, 96, 0.8);
 }
 
 
