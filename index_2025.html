@@ -1,0 +1,1016 @@
+<html>
+
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Yutong Yang</title>
+    <!-- <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" /> -->
+    <link href="style_2025.css" rel="stylesheet" type="text/css" media="screen" />
+    <script language="javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="jslib/d3tip.js"></script>
+    <script src="jslib/d3-contour.min.js"></script>
+    <script src="jslib/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+</head>
+<style>
+    .node rect {
+        cursor: move;
+        fill-opacity: .9;
+        shape-rendering: crispEdges;
+    }
+
+    .node text {
+        pointer-events: none;
+        text-shadow: 0 1px 0 #fff;
+    }
+
+    .link {
+        fill: none;
+        stroke: #000;
+        stroke-opacity: .2;
+    }
+
+    .link:hover {
+        stroke-opacity: .5;
+    }
+</style>
+<body>
+    <div id="wrapper">
+        <div id="menu-wrapper">
+            <div id="menu">
+                <ul>
+                    <li id="aboutme" class="current_page_item"><a href="#aboutme" onclick="tab_aboutme()">About</a></li>
+                    <li id="publications" class=""><a href="#cv" onclick="tab_publications()">CV</a></li>
+                    <!-- <li id="projects" class=""><a href="#projects" onclick="tab_projects()">Projects</a></li> -->
+                    <!-- <li id="misc" class=""><a href="#misc" onclick="tab_misc()">misc</a></li> -->
+                    <!-- !!!!! -->
+                    <!-- <li id="mevis" class=""><a href="#mevis" onclick="tab_mevis()">MeVis</a></li> -->
+                    <li id="school" class=""><a href="#school" onclick="tab_school()">School</a></li>
+                    <li id="personal" class=""><a href="#personal" onclick="tab_personal()">Life</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 个人介绍页 -->
+        <div id="div_aboutme" class="container" style="display:block">
+            <nav id="page-nav" class="page-nav">
+                <a href="#intro">Intro</a>
+                <a href="#works">Research</a>
+                <a href="#internship">Internship</a>
+                <a href="#projects">Projects</a>
+                <a href="#words">Words</a>
+            </nav>
+            <div id="intro" class="section-anchor"></div>
+            <div class="photo_containter"><img  id="myImage" src="images/yytphoto/me5.jpg" alt="" onclick="changeImage()"/>
+                <p>Yutong Yang 杨雨彤<br>Shanghai Jiao Tong University<br> flora20@sjtu.edu.cn
+                </p>
+            </div>
+            <div class="cv_containter">
+                <p><strong>Intro</strong>
+
+
+                <p> Hi! I am a third-year master student in the <a href="https://vis.sjtu.edu.cn/index.html" class="linkStyle2">Data Intelligence Visual Analytics Team</a> at Shanghai Jiao Tong University 
+                    and also a visiting student in <a href="https://vis.pku.edu.cn/" class="linkStyle2">PKU Visualization and Visual Analytics Group</a> at Peking University, supervised by <a href="https://www.cs.sjtu.edu.cn/PeopleDetail.aspx?id=107" class="linkStyle2">Prof. Xiaoju Dong</a> and <a href="https://vis.pku.edu.cn/xiaoruyuan.html" class="linkStyle2">Prof. Xiaoru Yuan</a>.
+                    
+                <p> Now, I am working at <a href="https://www.oecd.org/en/about/directorates/sahel-and-west-africa-club.html" class="linkStyle2">SWAC, OECD</a> as a data analyst intern, supervised by <a href="https://www.linkedin.com/in/inhoi-heo-1948a3107/?originalSubdomain=fr" class="linkStyle2">Inhoi Heo</a>.
+                    
+                <p> My research interests lie at <strong>the intersection of data visualization, humanities and social sciences</strong>. 
+                    <!-- Currently, I'm focusing on analyzing how incomprehension arises in conversation.  -->
+                    I’m passionate about using technology and creativity to delve into the humanities, and reflecting on the technology itself.
+                    It’s a pursuit fueled by a deep sense of empathy and a commitment to fairness. 
+                    For me, an ideal work, even if it's a small force, should be truly valuable in enhancing mutual understanding and inclusivity among diverse individuals or societal groups.
+                    <!-- driving societal progress,  -->
+                    <!-- such as revealing diverse life circumstances and perceptions,
+                    uncovering and presenting inequalities, or advocating for universal access to knowledge. -->
+                    This might involve exploring individual differences impacting communication, revealing diverse life situations and perceptions, 
+                    uncovering and presenting inequities, or advancing universal access to knowledge.
+                    
+                <p> Additionally, 
+                    <!-- I am interested in human-AI teaming and expect to conduct research relevant to this field.  -->
+                    I’m fascinated with the potential power of AI and look forward to exploring how human imagination can collaborate with it.
+                <p> I enjoy reading, thinking, creating and also chatting with GPT. ☺️
+                <p><strong>Interest Tags —</strong>
+                Interdiscipline, Data Humanism, Data Art, Subjectivity in Data Visualization, Affective Visualization Design, Visual Representation for Human, Social Science, Ethics, Reflections on InfoVis, Digital Humanities, Graphic Design </p>
+                <p><strong>News</strong>
+                <!-- <p>🌱 [<span style="text-decoration: underline; text-decoration-thickness: 0.9px;">2024/04</span>] Our work "City Pulse: Global Metro Line Development History" is included in the shortlist of Visual Data Storytelling contest, PacificVis 2024.
+                <p>🌱 [<span style="text-decoration: underline; text-decoration-thickness: 0.9px;">2024/01</span>] Our paper "EmoGeoCity: Interactive Visual Exploration of City’s Historical and Cultural Evolution Based on Emotional Geography" is accepted by PacificVis 2024. -->
+                <div>🌱 [<span>07/2025</span>] Affective GeoVisualization Design is accepted by IEEE VIS 2025.</div>
+                <div>🌱 [<span>07/2025</span>] Octopus Maps Design is accepted by IEEE VIS 2025.</div>
+                <div>🍀 [<span>05/2025</span>] Start working at OECD/SWAC.</div>
+                <div>🌱 [<span>03/2025</span>] City Pulse is longlisted in the Information is Beautiful Awards 2024.</div>
+                <div>🌱 [<span>03/2025</span>] LearnClusterVis is accepted by EuroVis 2025 Education Papers track.</div>    
+                <div>🌱 [<span>03/2025</span>] Dialogue Character Extraction and Attribution in Classic Chinese Novels is accepted by DH2025.</div>    
+                <div>🌱 [<span>08/2024</span>] City Pulse is accepted by IEEE VIS 2024 Arts Program as a pictorial!</div>
+                <div>🌱 [<span>07/2024</span>] LearnClusterVis wins first prize in ChinaVis 2024 Visual Analytics Challenge.</div>
+                <div>🌱 [<span>06/2024</span>] City Pulse is to be exhibited in China VISAP'24.</div>
+                <div>🌱 [<span>04/2024</span>] City Pulse is shortlisted in Visual Data Storytelling contest, PacificVis 2024.</div>
+                <div>🌱 [<span>01/2024</span>] EmoGeoCity is accepted by PacificVis 2024.</div>
+        
+                <!-- 🪄 🦋🌸🔹🔸🧚‍♂️🧚🌱🍀🌈 -->
+             </div>
+            <div class="section-divider"></div>
+            <div id="works" class="section-anchor"></div>
+            <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
+                <p>Research</p>
+            </div>
+
+            <div class="news_containter">
+                <div class="box-style">
+                    <div class="snap_containter"><img src="images/affectivegeovis.jpg" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge_survey">Vis Survey</span> <strong>"Mapping What I Feel": Understanding Affective Geovisualization Design Through the Lens of People-Place Relationships</strong>
+                        </div>
+                        <div class="box-style2">
+                            Xingyu Lan*, <u>Yutong Yang</u>*, Yifan Wang
+                            <br>IEEE VIS 2025
+                        </div>
+                        <div class="box-style3">
+                            We analyzed a corpus of 62 affective geovisualization designs and constructed a taxonomy that characterizes their design features by referring to the PPP model from humanistic geography. 
+                            <!-- Based on the coded corpus, we also identified four high-level paradigms: computational, anthropological, social activism, and art, representing distinct practice patterns of affective geovisualization design in different domains.  -->
+                            <br><a href="http://arxiv.org/abs/2507.11841" class="linkStyle1" target="_blank">[Paper]</a><a href="VIS2025_MappingWhatIFeel.pdf" class="linkStyle1" target="_blank">[PPT]</a><a href="https://affectivegeovis.github.io/" class="linkStyle1" target="_blank">[Website]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <div class="snap_containter"><img src="images/metro.png" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge_2">Data Art</span> <strong>City Pulse: Revealing City Identity Through Abstraction of Metro Lines</strong>
+                        </div>
+                        <div class="box-style2">
+                            Xinyue Chen, Yixuan Zhang, <u>Yutong Yang</u>, Jing Chen, Xiaoru Yuan, Weiping Chen, Rebecca Ruige Xu
+                            <br>IEEE VIS 2024 Arts Program; IEEE PacificVis 2024 Visual Data Storytelling Contest; China VISAP'24.
+                        </div>
+                        <div class="box-style3">
+                            We reveal the region characteristics and tell the story about the development of metro by abstracting the city as a square, the metro route as a line, and using the width of the
+                            lines to represent the coverage of the routes.
+                            <br><a href="https://globalmetro.github.io/city_pulse/#/" class="linkStyle1" target="_blank">[System]</a><a href="https://www.bilibili.com/video/BV1NJ4m1u7Uc" class="linkStyle1" target="_blank">[Video]</a><a href="https://ieeexplore.ieee.org/abstract/document/10749932" class="linkStyle1" target="_blank">[Paper]</a><a href="https://www.behance.net/gallery/197989615/City-Pulse-Global-Metro-Line-Development-History" class="linkStyle1" target="_blank">[Gallery]</a>
+                        </div>
+                        <!-- https://vis.pku.edu.cn/metro/dist/index.html#/ -->
+                        <!-- https://www.youtube.com/watch?v=T2HsdA2j8aE -->
+                            <!-- <br>本书介绍: <a href="https://mp.weixin.qq.com/s/3OOBBu7wLc53kSdr2gzvqg" target="_blank">Link</a> ｜ 京东/当当/天猫在售 -->
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <div class="snap_containter"><img src="images/EmoGeoCity.png" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge">Vis Application</span> <strong>EmoGeoCity: Interactive Visual Exploration of City’s Historical and Cultural Evolution Based on Emotional Geography</strong>
+                        </div>
+                        <div class="box-style2">
+                            <u>Yutong Yang</u>, Yinuo Liu, Qishuo Bai, Tianyi Zhou, Ziduo Ye, Xiaoju Dong
+                            <br>IEEE PacificVis 2024
+                        </div>
+                        <div class="box-style3">
+                            <!-- A visual analytics system to study a city’s cultural and historical evolution based on emotional geography. -->
+                            EmoGeoCity is a digital humanities visual analytics system to study a city's cultural and historical evolution, connecting multidimensional data with emotion.
+                            <br><a href="https://ieeexplore.ieee.org/abstract/document/10541485" class="linkStyle1" target="_blank">[Paper]</a>
+                        </div>
+                            <!-- <br><a href="https://arxiv.org/abs/2308.02831" target="_blank">[Paper]</a> | Material: <a href="https://affectivevis.github.io/" target="_blank">Website</a> -->
+                        
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <div class="snap_containter"><img src="images/octopus2.png" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge_survey">Vis Survey</span> <strong>Unveiling the Visual Rhetoric of Persuasive Cartography: A Case Study of the Design of Octopus Maps</strong>
+                        </div>
+                        <div class="box-style2">
+                            Daocheng Lin, Yifan Wang, <u>Yutong Yang</u>, Xingyu Lan
+                            <br>IEEE VIS 2025
+                        </div>
+                        <div class="box-style3">
+                            We collected a corpus of 90 octopus maps from various online sources. 
+                            Then, drawing upon the rhetorical schema, we investigated the visual rhetoric of these maps in detail
+                            and summarized a design space.
+                            <br><a href="http://arxiv.org/abs/2507.11903" class="linkStyle1" target="_blank">[Paper]</a><a href="https://octopusmap.github.io/" class="linkStyle1" target="_blank">[Website]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <div class="snap_containter"><img src="dh2025_pre_html/figure/frontend_annotation.png" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge">Vis Application</span> <strong>Leveraging Human Expertise for LLM-Assisted Dialogue Character Extraction and Attribution in Classic Chinese Novel</strong>
+                        </div>
+                        <div class="box-style2">
+                            <u>Yutong Yang</u>, Yuhan Guo, Xiaoju Dong, Xiaoru Yuan
+                            <br>DH2025 short presentation
+                        </div>
+                        <div class="box-style3">
+                            In this work, we propose a framework for extracting, annotating, attributing and visualizing dialogue characters in classic Chinese novels. We leverage interactive workflows to incorporate expert’s knowledge in the dialogue character extraction and attribution process.
+                            <br><a href="dh2025_pre_html/index.html" class="linkStyle1" target="_blank">[PPT]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <div class="snap_containter"><img src="images/MBTIviz.png" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge">Vis Application</span> <strong>MBTIviz: A Visualization System for Research on Psycho-Demographics and Personality</strong>
+                        </div>
+                        <div class="box-style2">
+                            <u>Yutong Yang</u>, Xiaoju Dong, Xuefei Tian, Yanling Zhang, Meng Zhou
+                            <br>International Conference of Pioneering Computer Scientists, Engineers and Educators, 2023.
+                            <!-- ICPCSEE 2023: The Ninth International Conference of Pioneering Computer Scientists, Engineers and Educators. -->
+                        </div>
+                        <div class="box-style3">
+                            MBTIviz is a system that visualizes the relationship between personality and demographic factors. 
+                            It’s used in the study to calculate the distribution of age, gender, and occupation for each personality type, 
+                            and explore the correlation between personality, occupation, and nationality.
+                            <!-- MBTIviz is a visualization system that enables a comprehensive and accessible analysis of the correlation 
+                            between personality and demographic variables such as occupation and nationality. 
+                            In the study, we also utilize the MBTIviz system to analyse the MBTI-demographic dataset, calculating age, gender, and occupation percentages 
+                            for each MBTI and studying the correlation between MBTI, occupation, and nationality. -->
+                            <br><a href="https://link.springer.com/chapter/10.1007/978-981-99-5968-6_19" class="linkStyle1" target="_blank">[Paper]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <div class="snap_containter"><img src="images/LearnClusterVis.png" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge">Vis Application</span> <strong>LearnClusterVis: A Framework for Clustering-driven Visual Analysis of Programming Learners' Learning Process</strong>
+                        </div>
+                        <div class="box-style2">
+                            Qishuo Bai, Zhiyuan Wu, Yinuo Liu, <u>Yutong Yang</u>, Junxiang Cao, Xiaoju Dong
+                            <br>EUROVIS 2025
+                        </div>
+                        <div class="box-style3">
+                            We introduce LearnClusterVis, a clustering-driven visual analysis framework designed to uncover behavioral patterns and developmental trajectories in programming learners' activities
+                            <br><a href="https://diglib.eg.org/items/85f5d64a-d3cc-4884-a8e7-e4dc71a378e8" class="linkStyle1" target="_blank">[Paper]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <div class="snap_containter"><img src="images/教育公平.png" alt="" /></div>
+                    <div class="pub_containter">
+                        <div class="box-style1">
+                            <span class="badge_3">Social Science</span> <strong>成长背景对教育获得的影响——以上海地区80后群体为例 (The Influence of Growth Background on Educational Attainment - An Example of Post-80s Group in Shanghai)</strong>
+                        </div>
+                        <div class="box-style2">
+                            <u>Yutong Yang</u>, Yinuo Liu, Shengyi Han, Yunkang Chang, Yiwei Gong, Youwei Zhao, Xiaoju Dong
+                            <br>ChinaVis 2023 poster.
+                            <!-- ICPCSEE 2023: The Ninth International Conference of Pioneering Computer Scientists, Engineers and Educators. -->
+                        </div>
+                        <div class="box-style3">
+                            We investigated the impact of the growth background (including personal characteristics, region and family background) 
+                            of the post-80s generation in Shanghai on educational attainment from the perspective of cultural reproduction, based on the “Shanghai Baseline Survey Data (FYRST2013)”.
+                            <br><a href="./ChinaVis2023_Poster.pdf" class="linkStyle1" target="_blank">[Poster]</a><a href="./ChinaVis2023_Poster_Description.pdf" class="linkStyle1" target="_blank">[Description]</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Under Construction... -->
+
+            </div>
+
+            <div class="section-divider"></div>
+            <div id="internship" class="section-anchor"></div>
+            <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
+                <p>Internship @ OECD/SWAC</p>
+            </div>
+
+            <div class="news_containter">
+                <div class="internship_gallery">
+                    <div class="internship_item">
+                        <img src="images/swac/abstractAfricaMap.gif" alt="Abstract Africa map visualization" class="internship_zoom" data-image="images/swac/abstractAfricaMap.gif" />
+                        <p class="internship_caption">
+                            <a href="https://swac-vis.github.io/africa-rural-atlas/map/population_scatter_plot_unified.html" class="internship_link" target="_blank">Abstract Africa Rural-Urban Population Map</a>
+                        </p>
+                    </div>
+                    <div class="internship_item">
+                        <img src="images/swac/foodFlow.gif" alt="Food flow visualization" class="internship_zoom" data-image="images/swac/foodFlow.gif" />
+                        <p class="internship_caption">
+                            <a href="https://swac-vis.github.io/west-africa-food-trade/" class="internship_link" target="_blank">West Africa Food Trade</a>
+                        </p>
+                    </div>
+                    <div class="internship_item">
+                        <img src="images/swac/agglomerationGrowth.png" alt="Agglomeration growth visualization" class="internship_zoom" data-image="images/swac/agglomerationGrowth.png" />
+                        <p class="internship_caption">
+                            <a href="https://swac-vis.github.io/agglomeration-polygon/map_canvas.html" class="internship_link" target="_blank">West Africa Agglomeration Growth</a>
+                        </p>
+                    </div>
+                    <div class="internship_item">
+                        <img src="images/swac/storytellingRuralUrban.gif" alt="Rural-urban storytelling visualization" class="internship_zoom" data-image="images/swac/storytellingRuralUrban.gif" />
+                        <p class="internship_caption">
+                            <a href="https://swac-vis.github.io/africa-rural-atlas/index_scrolly.html" class="internship_link" target="_blank">Africa Rural–Urban Storytelling</a>
+                        </p>
+                    </div>
+                    <div class="internship_item">
+                        <img src="images/swac/urbanization.png" alt="Urbanization visualization" class="internship_zoom" data-image="images/swac/urbanization.png" />
+                        <p class="internship_caption">
+                            <a href="https://swac-vis.github.io/swac-africa-urbanization-vis/" class="internship_link" target="_blank">Africa Urbanisation</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+            <div id="projects" class="section-anchor"></div>
+            <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
+                <p>Other Projects</p>
+                <!-- <div class="expand" onclick=toggle()>Expand</div> -->
+            </div>
+            
+
+            <div class="news_containter">
+                <div class="box-style">
+                    <!-- <div class="snap_containter"><img src="images/EmoGeoCity.png" alt="" /></div> -->
+                    <!-- <div class="pub_containter"> -->
+                        <!-- <div class="box-style1">
+                            <strong>Dialogue Character Extraction and Attribution in Classic Chinese Novels, 2023-2025</strong>
+                        </div>
+                        <div class="box-style2">
+                            <li>Automatic identification: utilized rule-based, deep learning, and GPT to extract speakers and listeners.</li>
+                            <li>User interaction: designed and implemented a dialogue annotation system for manually editing extracted errors.</li>
+                        </div>
+                        <br> -->
+
+
+                        <div class="box-style1">
+                            <strong>Research on the cultural adaptation of foreign teachers in Chinese universities, 2022</strong>
+                        </div>
+                        <div class="box-style2">
+                            <!-- <ul style="list-style-type: square;"> -->
+                                <li>Undergraduate thesis, a French research project supervised by <a href="https://shss.sjtu.edu.cn/Web/FacultyDetail/206" class="linkStyle1">Humanities Prof. Yi Ren</a>.</li>
+                                <li>Investigated and analyzed cultural adaptation among French teachers in a Chinese university through quantitative methods, identifying significant correlations with factors like living environment and teaching adaptation.</li>
+                                <li>Conducted semi-structured interviews with six French teachers from various backgrounds to explore specific challenges and solutions.</li>
+                            <!-- </ul> -->
+                            <a href="./Étude sur l’adaptation culturelle des enseignants étrangers dans les universités chinoises.pdf" class="linkStyle1" target="_blank">[Paper]</a>
+                        </div>
+            <!-- <br>
+                <div class="box-style">
+                    <div class="box-style1">
+                        <strong>Intelligent Venue Visualization, 2021</strong>
+                    </div>
+                </div>
+            <br>
+                <div class="box-style">
+                    <div class="box-style1">
+                        <strong>Design and Prototype Development of Health Management Application Software for College Students, 2022</strong>
+                    </div>
+                </div>
+
+            <br>
+                <div class="box-style">
+                    <div class="box-style1">
+                        <strong>Sonaide, 2022</strong>
+                    </div>
+                </div> -->
+            <br>
+                <div class="box-style">
+                    <div class="box-style1">
+                        <strong>Social Practice: Inequity in the Spatial Distribution of Male and Female Public Restrooms, 2019</strong>
+                    </div>
+                    <div class="box-style2">
+                        <!-- <ul style="list-style-type: square;"> -->
+                            <li>Observed the issue of women spending more time queuing for restrooms than men and planed and implemented a social practice.</li>
+                            <li>Conducted on-site interviews with the managers of public restrooms at renowned Shanghai landmarks such as People's Square, Jing'an Temple, and Yu Garden.</li>
+                        <!-- </ul> -->
+                    </div>
+                </div>
+
+                       
+                        
+                    </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div style="bottom: 0; text-align: right; font-size: 0.8em;">
+                <a href="https://olivialan.github.io/" class="linkStyle1">Credit: web source from Prof. Xingyu Lan</a>
+            </div>
+
+            <div class="section-divider"></div>
+            <div id="words" class="section-anchor"></div>
+            <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
+                <p>Some Words</p>
+                <div class="expand" onclick=toggle()>Expand</div>
+            </div>
+            <div class="news_containter">
+                <div class="box-style">
+                    <p style="font-size: 14px">More specifically, my interest lies at the intersection of two aspects: humanism and creativity. 
+                    Along with my accumulated skills in visualization and data analysis, as well as my strengths in empathy, problem sensitivity, 
+                    and critical thinking, they guide my path toward achieving my goals.
+                    </p>
+                
+                    <!-- <p style="font-size: 14px; text-align: center;">Humanism and Creativity</p> -->
+                    <p> - HUMANITY - </p>
+                <div class="expand-content">
+                    <p style="font-size: 14px">In the aspect of <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">humanism</a>, the original intention is to be understood, 
+                        and this kind of understanding extends to a wider range of the groups that I belong or empathize with. 
+                    I’m always looking for an expression that breaks down the barriers of difference and allows for empathy between different people. 
+                    For example, the group of people encompassing empathy, the idealists, the females, the minorities… 
+                    Because differences of background, situation, characteristic like gender, perception, etc. lead to different choices of being. 
+                    <!-- To understand, people need to see how these choices are made and perceive widely. -->
+                    I thus want to speak aloud to let more people know what different kinds of groups are perceiving and give us all understanding and support, 
+                    rather than criticize and marginalize the “abnormal” choices made. 
+                    <!-- To get a step further, I believe that every person experienced their own circumstances and thus led to their special personality and choices.  -->
+                    And understanding between the different us lies in a way, whether technical or humanistic, of true empathy. 
+
+                    <p style="font-size: 14px">Thus, any effort related to revealing social conditions, advocating for the rights of marginalized groups, 
+                        promoting equity and diversity, and fostering mutual understanding and inclusivity fills me with great meaning and enthusiasm.
+                    </p>
+
+                    <p style="font-size: 14px">In the aspect of <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">creativity</a>,
+                        the journey of exploring visualization itself is exciting. 
+                        I enjoy thinking out of the box and bringing the creativities into useful ideas. And I like using basic shapes to form novel designs.
+                        From another perspective, as Iris Murdoch said, <a style="font-style: italic"> art and morals are one, sharing the same essence: love. </a>
+                        It embraces the power of humanistic care and inherently aims to break down walls of incomprehension. 
+                        It transcends the self, representing the broadest realm of human insight. 
+                    <!-- Art and morals are… one. Their essence is the same. The essence of both of them is love. Love is the perception of individuals. Love is the extremely difficult realisation that something other than oneself is real. Love, and so art and morals, is the discovery of reality. -->
+                    </p>
+
+                    <p style="font-size: 14px">
+                        The act of expressing emotions, perceptions, dreams, and more through the medium of art, transcending the barriers of limited words can profoundly touch me.
+                    </p>
+
+                    <!-- <p style="font-size: 14px; text-align: center;">An Interdisciplinary Path</p> -->
+                    <!-- Visualization and Social Computing -->
+                </div>
+                    <p> - TECHNOLOGY - </p>
+                <div class="expand-content">
+                    <p style="font-size: 14px">
+                        I’ve grappled with the tug-of-war between reality and ideals since childhood. 
+                        I chose to learn more about technology during my growth process, bridging the gap to reality and acquiring the ability to implement my ideas.
+                    </p>
+
+                    <p style="font-size: 14px">
+                        My research experience in the field of <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">visualization</a> 
+                        has empowered me with the ability to narrow down the broadly perceived problems and enhance my analytical skills. 
+                        At the same time, I’ve been actively enhancing my abilities in <a style="font-weight: bold; color: rgba(202, 39, 96, 0.821);">social analysis</a> 
+                        as I persistently seek solutions for presenting and addressing the circumstances faced by minority and vulnerable groups, 
+                        while advocating for a more equitable and inclusive society.
+                    </p>
+                    <p> - INTERDISCIPLINARITY - </p>
+                    <p style="font-size: 14px">
+                        In light of all above, I find myself at the intersection of multiple disciplines.
+                    </p>
+                    <div id="sankey-chart" style="margin-bottom: 50;">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- CV -->
+        <div id="div_publications" style="display: none; margin-top: 50px; text-align: center; width: 50%; margin: auto;" class="container">
+            <br><br><br><br>
+            <img src="images/yytphoto/MyTimeline2.png" alt="" style="width: 100%; height: auto;" />
+            <br><br><br><br>
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>EDUCATION</strong>
+                <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Shanghai Jiao Tong University</span>
+                    <span>Shanghai, China</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Master of Electronic and Information Engineering</span>
+                    <span>[Expected]Sep. 2022 – Mar. 2026</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Shanghai Jiao Tong University</span>
+                    <span>Shanghai, China</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Bachelor of French, Minor in Information Engineering </span>
+                    <span>Sep. 2018 – June 2022</span>
+                </div>
+                <!-- <hr style="margin-top: 1%; margin-bottom: 0%;"></hr> -->
+
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>RESEARCH EXPERIENCE</strong>
+                <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Data Intelligence Visual Analytics Team, Shanghai Jiao Tong University</span>
+                    <span>Shanghai, China</span>
+                    <!-- <span>Sep. 2021 – Present</span> -->
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>EmoGeoCity: City Evolution Study Based on Emotional Geography</span>
+                    <span>Apr. 2023 – Feb. 2024</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Incorporated literary works into visual analytics for studying the history of a city.</li>
+                    <li>Leveraged emotion to connect multiple dimensions in cultural historical data, incorporating sentiment analysis for quantifying works' content and synthesizing overall emotional trends within specific contexts.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Inequity in Educational Growth: A Study on Post-80s Shanghai</span>
+                    <span>Nov. 2022 – Nov. 2023</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Conducted regression analysis to identify regional and family background as significant correlation coefficients in educational attainment, explored their impacts, and proposed recommendations based on a qualitative analysis.</li>
+                    <li>Team leader and won first prize in Huiyuan national data analysis competition, awarded ¥10,000 prize.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>MBTIviz: Visual Analysis of the Correlation Between Personality Traits and Demographics</span>
+                    <span>Jan. 2022 – July 2022</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Designed a comprehensive demographic data view which integrates personality, career, gender and age.</li>
+                    <li>Implemented chart-based correlation analysis for personality, career, and region, replacing data tables.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>LearnClusterVis: A Visual Analytics System for Education Data</span>
+                    <span>June 2024 – Apr. 2025</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Participated in the design process to showcase learner's behavior and knowledge mastery through multiple views and in writing.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <span>PKU Visualization and Visual Analytics Group, Peking University</span>
+                    <span>Beijing, China</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>City Pulse: Global Metro Line Development History</span>
+                    <span>July 2023 – Aug. 2024</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Proposed the core design idea of encoding the city as a square, the metro route as a line, and using the width of the lines to represent the coverage of the routes.</li>
+                    <li>Developed the system of Global Metro Line Development History.</li>
+                    <li>The work was exhibited in China VISAP and shortlisted in Visual Data Storytelling contest, IEEE PacificVis.</li>
+                </ul>
+
+                <!-- <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Digital Conversation Visualization</span>
+                    <span>Sep. 2023 -- Present</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Present the conflict of conversation and identify potential reasons of incomprehension.</li>
+                </ul> -->
+                <!-- <li>Conducting visual analysis on instant messaging data from a conversation analysis perspective.</li>
+                <li>Exploring the opposition, divergence and misunderstandings in dialogue through user differences.</li> -->
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Extraction of Dialogue Characters in Classic Chinese Novels</span>
+                    <span>Feb. 2023 – Present</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Automatic identification: utilized rule-based methods and LLMs to extract speakers and listeners.</li>
+                    <li>User interaction: designed and implemented a dialogue annotation system for editing extracted errors.</li>
+                    <li>Visualization: implemented a character dialogue network with nodes aggregating multiple references to the same character.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Visualizing the Reclassification of Knowledge in Mengxi Bitan</span>
+                    <span>July 2024</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Proposed a Sankey and tree diagram variant to study the relationship between two books.</li>
+                    <li>Explored Mengxi Bitan's citations and reclassifications in ancient texts to understand changes in epistemology.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <span>FDUVIS, Fudan University</span>
+                    <span>Shanghai, China</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Survey on Affective Geovisualization Design Through the Lens of People-Place Relationships</span>
+                    <span>Nov. 2024 – Apr. 2025</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Studied the role of affective visualization design in people-place relationship.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                    <span>Survey on Visual Rhetoric in Persuasive Cartography with Focus on Octopus Maps</span>
+                    <span>Jan. 2025 – Apr. 2025</span>
+                </div>
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Studied the visual rhetorical strategies of maps.</li>
+                </ul>
+
+                <!-- <hr style="margin-top: 1%; margin-bottom: 0%;"></hr> -->
+
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>INTERNSHIP EXPERIENCE</strong>
+                    <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <div style="display: flex; justify-content: space-between;">
+                        <span>Sahel and West Africa Club, Organisation for Economic Co-operation and Development (OECD)</span>
+                        <span>Paris, France</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                        <span>Data Analyst</span>
+                        <span>[Expected]May 2025 – Mar. 2026</span>
+                </div>
+                    <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                        <li>Data visualization and analysis about urbanisation, food and climate in Africa.</li>
+                        <li>Web design, including prototype creation, user interface improvement, and integration with visualization tools.</li>
+                    </ul>
+                <div style="display: flex; justify-content: space-between;">
+                        <span>Editorial Department, Chu Chen Books</span>
+                        <span>Beijing, China</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                        <span>Editorial Intern</span>
+                        <span>Oct. 2024 - Feb. 2025</span>
+                </div>
+                    <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                        <li>New media operations: content selection, editing and formatting.</li>
+                    </ul>
+                <div style="display: flex; justify-content: space-between;">
+                        <span>IVORY Bridal Gallery</span>
+                        <span>Shanghai, China</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8em; font-style: italic;">
+                        <span>Assistant Photographer and New Media Operations, Marketing Department</span>
+                        <span>June 2021 – Aug. 2021</span>
+                </div>
+                    <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                        <li>Proposal planning and implementation, photography, and content editing.</li>
+                        <li>Main photographer for blogger promotion photos.</li>
+                    </ul>
+                
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>PUBLICATIONS</strong>
+            <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <p style="text-align: left; font-size: 0.8em;">[1] X. Lan*, <u>Y. Yang</u>* and Y. Wang, ""Mapping What I Feel": Understanding Affective Geovisualization Design Through the Lens of People-Place Relationships," in IEEE VIS 2025.
+                <p style="text-align: left; font-size: 0.8em;">[2] <u>Y. Yang</u>, Y. Liu, Q. Bai, T. Zhou, Z. Ye and X. Dong, "EmoGeoCity: Interactive Visual Exploration of City's Historical and Cultural Evolution Based on Emotional Geography," in 2024 IEEE 17th Pacific Visualization Conference (PacificVis), pp. 102-111, IEEE, 2024.
+                <p style="text-align: left; font-size: 0.8em;">[3] X. Chen, Y. Zhang, <u>Y. Yang</u>, J. Chen, R. Xu, W. Chan and X. Yuan, "City Pulse: Revealing City Identity Through Abstraction of Metro Lines," in 2024 IEEE VIS Arts Program (VISAP), pp. 1-16, IEEE, 2024.
+                <p style="text-align: left; font-size: 0.8em;">[4] D. Lin, Y. Wang, <u>Y. Yang</u> and X. Lan, "Unveiling the Visual Rhetoric of Persuasive Cartography: A Case Study of the Design of Octopus Maps," in IEEE VIS 2025.
+                <p style="text-align: left; font-size: 0.8em;">[5] <u>Y. Yang</u>, Y. Guo, X. Dong, and X. Yuan, "Leveraging Human Expertise for LLM-Assisted Dialogue Character Extraction and Attribution in Classic Chinese Novel," Digital Humanities 2025 (DH2025) Short Presentation Track, 2025.
+                <p style="text-align: left; font-size: 0.8em;">[6] Q. Bai, Z. Wu, Y. Liu, <u>Y. Yang</u>, J. Cao, and X. Dong, "LearnClusterVis: A Framework for Clustering-driven Visual Analysis of Programming Learners' Learning Process," EuroVis Education Papers track, 2025.
+                <p style="text-align: left; font-size: 0.8em;">[7] <u>Y. Yang</u>, X. Dong, X. Tian, Y. Zhang and M. Zhou, "MBTIviz: A Visualization System for Research on Psycho-Demographics and Personality," in ICPCSEE 2023, Data Science, pp. 259–276, Springer, 2023.
+
+
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>AWARDS AND EXHIBITIONS</strong>
+                <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em; padding-left: 0; margin-left: 0; list-style-position: inside;">
+                    <li>Information is Beautiful Awards 2024.</li>
+                    <li>Shortlisted in Visual Data Storytelling contest, PacificVis 2024.</li>
+                    <li>First prize in Visual Analytics Challenge, ChinaVis 2024.</li>
+                    <li>The Second National Graphic Design Exhibition, 2025.</li>
+                    <li>China VISAP'24 Art Exhibition, 2024.</li>
+                    <li>Best Project Award in Visualization and Culture, China Digital Humanities 2024 (CDH2024).</li>
+                    <li>Honorable Award in Content Innovation Track, New Media Innovation and Creativity Competition, 2024.</li>
+                    <li>First prize in Huiyuan National Data Analysis Competition, 2022.</li>
+                </ul>
+
+
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>OTHER EXPERIENCE</strong>
+                <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Undergraduate thesis: Research on the cultural adaptation of foreign teachers in Chinese universities</span>
+                </div>
+
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Identified correlations between cultural adaptation and factors such as teaching adaptation.</li>
+                    <li>Uncovered a conflict between student-centered and teacher-centered education for incompatibility.</li>
+                </ul>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Social Practice: Inequity in the Spatial Distribution of Male and Female Public Restrooms</span>
+                </div>
+
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em;">
+                    <li>Organized a social practice on inequity in the spatial and temporal distribution of female and male public restrooms.</li>
+                </ul>
+
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>ACTIVITIES</strong>
+                    <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <ul style="list-style-type: square; text-align: left; font-size: 0.8em; padding-left: 0; margin-left: 0; list-style-position: inside;">
+                    <li>Member of Art Center of the Student Union at Shanghai Jiao Tong University, worked in photography, videography, interviewing, and party preparation, 2019-2020.</li>
+                    <li>Organized a social practice Inequity in the Spatial and Temporal Distribution of Female and Male Public Restrooms, 2019.</li>
+                    <li>Member of the institute's Youth Volunteer Department, involved in organizing and participating in volunteer teaching activity, 2019.</li>
+                    <li>Member of the School Singer Union, School Club, Nanyang Dance Club and Manaqua Theatre Club, participated in performances, 2018-2022.</li>
+                </ul>
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>TECHNICAL SKILLS</strong>
+                <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <p style="text-align: left; font-size: 0.8em;"> <strong>Languages</strong>: Python, HTML/CSS, JavaScript, SQL
+                <p style="text-align: left; font-size: 0.8em;"> <strong>Technologies</strong>: D3.js, Flask, Tornado, Vue, React, GPT, Pytorch
+                <p style="text-align: left; font-size: 0.8em;"> <strong>Others</strong>: Figma, Photography, Photoshop, Videography(live)
+
+            <p style="text-align: left; font-size: 1.2em; color: rgb(64, 152, 224);"><strong>LANGUAGES</strong>
+                <hr style="margin-top: -2%; margin-bottom: 0%;"></hr> 
+                <p style="text-align: left; font-size: 0.8em;"> <strong>English</strong>: IELTS 7.0 (Reading 7.5, Speaking 7.5, Listening 7.0, Writing 6.5)
+                <p style="text-align: left; font-size: 0.8em;"> <strong>French</strong>: DELF B2
+            <br><br>
+        </div>
+
+
+
+
+
+
+        
+        <!-- MeVis -->
+        <!-- <div>
+            <input id="inputX" type="number" placeholder="输入x值">
+            <input id="inputY" type="number" placeholder="输入y值">
+            <select id="selectShape">
+                <option value="circle">圆形</option>
+                <option value="triangle">三角形</option>
+                <option value="rect">方块</option>
+            </select>
+            <input id="inputSize" type="number" placeholder="输入大小">
+            <button onclick="addShape()">添加图形</button>
+        </div> -->
+        <div id="div_mevis" style="display: none; margin-top: 50px;" class="container">
+            (Under Construction 🏗️) Here, by reflecting on what situation I was in and the relevant choice I have made, 
+            I draw a life situation line which depicts my life points that inspired me or changed me.
+            If you are insterested in how your own life line has been led to present, you can write your own data in "medata" in the file me.js.
+        </div>
+
+
+
+
+
+
+
+
+        <!-- school -->
+        <div id="div_school" class="container" style="display: none; margin-top: 50px;">
+            
+             <div class="subtitle_container"><span class="subtitles">Some interesting courses I have taken or audited</span> 
+            &nbsp;&nbsp;&nbsp; French Philosophy &nbsp;&nbsp;&nbsp; Information Design &nbsp;&nbsp;&nbsp; Phenomenology &nbsp;&nbsp;&nbsp; A Spiritual Odyssey of the West &nbsp;&nbsp;&nbsp; Interactive Design &nbsp;&nbsp;&nbsp; Epistemology
+            </div>
+            <div class="subtitle_container"><span class="subtitles">Student Work</span> 
+            I worked at the Art Center of the Student Union at Shanghai Jiao Tong University. I mainly worked in photography, videography, and interviewing.
+            </div>
+            <div class="gallery_container">
+                <img src="images/yytphoto/AC1.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/AC3.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/AC8.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/AC2.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/AC4.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/AC7.jpg" alt="" loading="lazy" />
+                <!-- <img src="images/yytphoto/ArtCenter.jpg" alt="" /> -->
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1t7411i7wD&autoplay=no" style="border: 0px solid #f2f2f2; " allowfullscreen></iframe>
+                <a href="https://www.bilibili.com/video/BV1t7411i7wD/?spm_id_from=333.999.0.0&vd_source=b92b262d8b3a96c50054cbd7822e5e7b" target="_blank" class="linkStyle1">A video link to an event I participated in :)</a> 
+                &nbsp;&nbsp;&nbsp; I was one of the mobile cameras that worked from a close-up stage perspective.
+            </div>
+
+            <!-- <hr style="margin-top: 1%; margin-bottom: 1%;"></hr> -->
+
+            <hr style="margin-top: 1%; margin-bottom: 1%;"></hr>
+            <div style="display: inline-block; text-align:center; width: 20%; color:#3731207a; font-weight: 600; font-size: 20px">
+                <p>Some Words</p>
+                <!-- <div class="expand" onclick=toggle()>Expand</div> -->
+            </div>
+            <div class="news_containter">
+                <div class="box-style">
+                    <p style="font-size: 12;">
+                        I never stop thinking and try to find more academic intersections related to my major and my interests. 
+                        That’s partly the reason that I audited the courses. 
+                        I was excited to find every philosophy course inspiring and restructured my raw thinkings. 
+                    </p>
+                    <p style="font-weight: bold; ">Existentialism and Digital Humanities</p>
+                    <p style="font-size: 12;">
+                        Encountering existentialism is a turning point for me. 
+                        At that point I was lost but facing a forking path where I had to make a choice about my research direction. 
+                        I realized I needed to make choices within the limited freedom of my circumstances to correct my course. 
+                        With only a bit of courage, and a vague preference for humanities, 
+                        I suggested to my supervisor that I would like to try digital humanities. 
+                        That would be the start point of my academic journey in the humanities, also my path of self discovery and expression.
+                    </p>
+                    <p style="font-weight: bold; ">Artificial Intelligence and Consciousness</p>
+                    <p style="font-size: 12;">
+                        I particularly remember a lesson talked about the mind-brain identity theory. 
+                        I’ve already thought about whether there are cognition and emotion barriers between AI and human. 
+                        And I found in that lesson that the computationalism can potentially break the barriers between the two. 
+                        However, I believe there’s an unbridgeable gap between AI and human due to AI being a product of modern science while human consciousness has a metaphysical aspect.
+                        In short, for me, the difference lies in the explanatory gap.
+                        I haven’t thought through on that point but it interests me as always.
+                    </p>
+                    <p style="font-weight: bold; ">Generative Art, Creativity and Expression</p>
+                    <p style="font-size: 12;">
+                        I've been exposed to more knowledge about generative art during the Interactive Design course. 
+                        I have long looked forward to exploring how AI can collaborate with human imagination and help us with self-expression, 
+                        for I believe the essence of art lies in its ability of expression, whose threshold is lowered by generative art.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- me in life -->
+        <div id="div_personal" class="container" style="display: none; margin-top: 50px;">
+            
+            <div class="subtitle_container"><span class="subtitles">Some words resonate with me</span> 
+                &nbsp;&nbsp;&nbsp; 💞 Humanism &nbsp;&nbsp;&nbsp; 🦋 Inclusion &nbsp;&nbsp;&nbsp; 🎨 Creativity &nbsp;&nbsp;&nbsp; 🌈 Diversity &nbsp;&nbsp;&nbsp; 🔦 Existentialism</div>
+            <div class="subtitle_container"><span class="subtitles">Personal Interests</span> &nbsp;&nbsp;&nbsp; 🌍 travel &nbsp;&nbsp;&nbsp; 📷 photography &nbsp;&nbsp;&nbsp; 📖 reading &nbsp;&nbsp;&nbsp; 💭 thinking &nbsp;&nbsp;&nbsp; 🎵 music</div>
+
+
+            <!-- <hr style="margin-top: 1%; margin-bottom: 1%;"></hr> -->
+
+            <div class="subtitle_container"><span class="subtitles">My Footprints</span> </div>
+            <div class="gallery_container">
+                <img src="images/yytphoto/airplanemoon.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/belgiquewoman.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/finlandsnow.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/finlandstar.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/gozo1.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/gozo2.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/gozo3.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/gozo4.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/gozobus.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/icelandlight.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/icelandmountain.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/icelandpink.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/icelandtree.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/maltafish.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/maltajunlin.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/northlight.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/porto.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/Shanghai1.jpg" alt="" loading="lazy" />
+                <!-- <img src="images/yytphoto/Yinghua.jpg" alt="" /> -->
+                <img src="images/yytphoto/SJTU3.jpg" alt="" loading="lazy" />
+                <!-- <img src="images/yytphoto/Changsha3.jpg" alt="" /> -->
+                <img src="images/yytphoto/Changsha1.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/Gaotie.jpg" alt="" loading="lazy" />
+                <!-- <img src="images/yytphoto/Changsha2.jpg" alt="" /> -->
+                <img src="images/yytphoto/shanghai6.jpeg" alt="" loading="lazy" />
+                <!-- <img src="images/yytphoto/Huaniao1.jpg" alt="" />
+                <img src="images/yytphoto/Huaniao2.jpg" alt="" /> -->
+                <img src="images/yytphoto/shanghai2.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/Huaniao3.jpg" alt="" loading="lazy" />
+                <img src="images/yytphoto/shanghai3.jpeg" alt="" loading="lazy" />
+                <!-- <img src="images/yytphoto/shanghai5.jpeg" alt="" /> -->
+                <img src="images/yytphoto/Tokyo6.JPG" alt="" loading="lazy" />
+                <img src="images/yytphoto/shanghai4.jpeg" alt="" loading="lazy" />
+                <!-- <img src="images/yytphoto/shanghai7.jpeg" alt="" /> -->
+            </div>
+        </div>
+
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightboxImage" alt="" />
+        </div>
+</body>
+
+<script>
+    function toggle() {
+        var ele = document.getElementsByClassName("expand-content");
+        for (let i = 0; i < ele.length; i++) {
+            if (ele[i].style.display == "block") {
+                ele[i].style.display = "none";
+                document.getElementsByClassName("expand")[0].innerHTML = "Expand"
+            } else {
+                ele[i].style.display = "block";
+                document.getElementsByClassName("expand")[0].innerHTML = "Collapse"
+            }
+        }
+    }
+
+    // !!!!!
+    function tab_aboutme() {
+        document.getElementById("aboutme").className = "current_page_item"
+        document.getElementById("publications").className = ""
+        // document.getElementById("mevis").className = ""
+        document.getElementById("personal").className = ""
+        document.getElementById("school").className = ""
+        document.getElementById("div_aboutme").style.display = "block"
+        document.getElementById("div_publications").style.display = "none"
+        // document.getElementById("div_mevis").style.display = "none"
+        document.getElementById("div_personal").style.display = "none"
+        document.getElementById("div_school").style.display = "none"
+    }
+
+    function tab_publications() {
+        document.getElementById("aboutme").className = ""
+        document.getElementById("publications").className = "current_page_item"
+        // document.getElementById("mevis").className = ""
+        document.getElementById("personal").className = ""
+        document.getElementById("school").className = ""
+        document.getElementById("div_aboutme").style.display = "none"
+        document.getElementById("div_publications").style.display = "block"
+        // document.getElementById("div_mevis").style.display = "none"
+        document.getElementById("div_personal").style.display = "none"
+        document.getElementById("div_school").style.display = "none"
+    }
+
+    function tab_personal() {
+        document.getElementById("aboutme").className = ""
+        document.getElementById("publications").className = ""
+        // document.getElementById("mevis").className = ""
+        document.getElementById("personal").className = "current_page_item"
+        document.getElementById("school").className = ""
+        document.getElementById("div_aboutme").style.display = "none"
+        document.getElementById("div_publications").style.display = "none"
+        // document.getElementById("div_mevis").style.display = "none"
+        document.getElementById("div_personal").style.display = "block"
+        document.getElementById("div_school").style.display = "none"
+
+    }
+
+    function tab_school() {
+        document.getElementById("aboutme").className = ""
+        document.getElementById("publications").className = ""
+        // document.getElementById("mevis").className = ""
+        document.getElementById("personal").className = ""
+        document.getElementById("school").className = "current_page_item"
+        document.getElementById("div_aboutme").style.display = "none"
+        document.getElementById("div_publications").style.display = "none"
+        // document.getElementById("div_mevis").style.display = "none"
+        document.getElementById("div_personal").style.display = "none"
+        document.getElementById("div_school").style.display = "block"
+
+    }
+
+    var imageTracker = 'me5';
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (imageTracker == 'me5') {
+                image.src = 'images/yytphoto/me9.png';
+                imageTracker = 'me9';
+            } else {
+                image.src = 'images/yytphoto/me5.jpg';
+                imageTracker = 'me5';
+            }
+        }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var lightbox = document.getElementById("lightbox");
+        var lightboxImage = document.getElementById("lightboxImage");
+        var closeBtn = lightbox ? lightbox.querySelector(".lightbox-close") : null;
+
+        if (!lightbox || !lightboxImage || !closeBtn) {
+            return;
+        }
+
+        function enableLightboxForImage(img) {
+            if (img.classList.contains("lightbox-bound")) {
+                return;
+            }
+            img.classList.add("zoomable-image", "lightbox-bound");
+            img.addEventListener("click", function () {
+                var source = img.getAttribute("data-image") || img.src;
+                if (!source) {
+                    return;
+                }
+                lightboxImage.src = source;
+                lightbox.classList.add("visible");
+            });
+        }
+
+        var zoomTargets = document.querySelectorAll("img:not(#myImage):not(#lightboxImage)");
+        zoomTargets.forEach(function (img) {
+            if (!lightbox.contains(img)) {
+                enableLightboxForImage(img);
+            }
+        });
+
+        closeBtn.addEventListener("click", function () {
+            lightbox.classList.remove("visible");
+        });
+
+        lightbox.addEventListener("click", function (event) {
+            if (event.target === lightbox) {
+                lightbox.classList.remove("visible");
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                lightbox.classList.remove("visible");
+            }
+        });
+
+        // 导航高亮功能
+        var navLinks = document.querySelectorAll(".page-nav a");
+        var sections = ["intro", "works", "internship", "projects", "words"];
+
+        function updateActiveNav() {
+            var scrollPos = window.scrollY + 100;
+            sections.forEach(function (sectionId, index) {
+                var section = document.getElementById(sectionId);
+                if (section) {
+                    var sectionTop = section.offsetTop;
+                    var sectionBottom = sectionTop + section.offsetHeight;
+                    var nextSection = index < sections.length - 1 ? document.getElementById(sections[index + 1]) : null;
+                    var nextSectionTop = nextSection ? nextSection.offsetTop : Infinity;
+
+                    if (scrollPos >= sectionTop && scrollPos < nextSectionTop) {
+                        navLinks.forEach(function (link) {
+                            link.classList.remove("active");
+                        });
+                        navLinks[index].classList.add("active");
+                    }
+                }
+            });
+        }
+
+        window.addEventListener("scroll", updateActiveNav);
+        updateActiveNav();
+    });
+</script>
+<script src="./js/me.js"></script>
+<script src="./js/researchkeywords.js"></script>
+</html>
