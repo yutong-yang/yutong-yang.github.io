@@ -39,6 +39,8 @@
             cap_3: "West Africa Agglomeration Growth",
             cap_4: "Africa Rural–Urban Storytelling",
             cap_5: "Africa Urbanisation",
+            cap_6: "Africa Urban Metrics Data Dashboard",
+            cap_7: "Africapolis Website Renewal (Ongoing)",
             // project labels (reused)
             label_design_research: "Design Research",
             label_information_design: "Information Design",
@@ -113,6 +115,8 @@
             cap_3: "西非城市聚落发展",
             cap_4: "非洲城乡数据故事",
             cap_5: "非洲城市化",
+            cap_6: "非洲城市指标数据看板",
+            cap_7: "Africapolis 网站改版 (进行中)",
             label_design_research: "设计研究",
             label_information_design: "信息设计",
             label_interactive_design: "交互信息设计",
