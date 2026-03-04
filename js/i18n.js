@@ -33,7 +33,7 @@
             course_6: "Epistemology",
             // internship
             internship_title: "Internship",
-            internship_intro: "OECD/SWAC · 2025–2026 · Data visualization & interaction design. Research-oriented data products for African urbanisation and policy.",
+            internship_intro: "OECD/SWAC · 2025–2026 · Data visualization & interaction design & web development. Research-oriented data products for African urbanisation and policy.",
             cap_1: "Abstract Africa Rural-Urban Population Map",
             cap_2: "West Africa Food Trade",
             cap_3: "West Africa Agglomeration Growth",
@@ -109,7 +109,7 @@
             course_5: "交互设计",
             course_6: "认识论",
             internship_title: "实习",
-            internship_intro: "OECD/SWAC · 2025–2026 · 数据可视化与交互设计。面向非洲城市化与政策的研究型数据产品。",
+            internship_intro: "OECD/SWAC · 2025–2026 · 数据可视化、交互设计与与网站开发。面向非洲城市化与政策的研究型数据产品。",
             cap_1: "非洲城乡人口抽象地图",
             cap_2: "西非粮食贸易",
             cap_3: "西非城市聚落发展",
